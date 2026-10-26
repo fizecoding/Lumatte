@@ -1,0 +1,41 @@
+name: Lumatte
+options:
+  bundleIdPrefix: com.lumixfilmmirror
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+packages:
+  LumatteKit:
+    path: ..
+targets:
+  Lumatte:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources/LumatteApp
+      - path: Resources/media-assets
+        type: folder
+        buildPhase: resources
+      - path: Resources/app-assets
+        type: folder
+        buildPhase: resources
+      - path: Resources/cartridges
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - package: LumatteKit
+        product: LumatteCore
+    info:
+      path: Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lumixfilmmirror.ios
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 1.0.0
+        ENABLE_BITCODE: NO
+        SWIFT_EMIT_LOC_STRINGS: YES
+        GENERATE_INFOPLIST_FILE: NO

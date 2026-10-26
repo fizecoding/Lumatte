@@ -6,6 +6,21 @@
 
 **松映 · Lumatte** 是一款开源 Android 摄影工具。它把松下相机照片传输、移动胶片模拟、双 LUT 试套和画框导出放进同一条本地工作流，想让手机成为一间随身数字暗房。
 
+## iOS 移植
+
+本仓库同时包含原生 iOS 移植工程：
+
+- `ios/`：SwiftUI 应用、XcodeGen 配置与权限声明。
+- `Package.swift`：`LumatteCore` Swift Package 与 C++20 原生渲染桥接。
+- 复用本仓库的胶片模型、LUT、字体、画框素材与相机协议；RAW 仍只提取内嵌 JPEG。
+- 支持相机 Wi-Fi / BLE 配对辅助、照片浏览传输、24 款胶片、双槽 LUT、Lumix Lab、画框和批量导出。
+
+构建方式与功能边界见 [iOS 说明](ios/README.md)。
+
+## Android 说明
+
+以下内容为 Android 版原始说明。
+
 本项目由社区独立开发，与 Panasonic / 松下没有隶属关系；LUMIX、Kodak、Fujifilm、Ilford 等商标与产品名只用于标识相机和胶片风格。最低支持 Android 11（API 30），应用 ID 为 `com.lumixfilmmirror.app`，应用代码按 [GNU GPL v3.0](LICENSE) 开源。
 
 ![应用版本](https://img.shields.io/badge/版本-1.0.0-blue)
